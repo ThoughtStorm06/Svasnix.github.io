@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Doctor Dashboard</title>
+  <link rel="stylesheet" href="styles5.css">
+  <script src="script3.js" defer></script>
+</head>
+
+<body>
+  <div class="dashboard-container">
+    <!-- Sidebar -->
+    <div class="sidebar">
+      <div class="doctor-info">
+        <img src="doctor-image.jpg" alt="Doctor Image" class="doctor-image">
+        <h2>Dr. John Doe</h2>
+        <p>Specialization: Cardiologist</p>
+      </div>
+      <ul class="sidebar-menu">
+        <li><a href="#" onclick="showPage('patient-info')">Patient Info</a></li>
+        <li><a href="#" onclick="showPage('settings')">Settings</a></li>
+        <li><a href="#" onclick="showPage('notifications')">Notifications</a></li>
+        <li><a href="#" onclick="showPage('appointments')">Appointments</a></li>
+        <li><a href="#" onclick="showPage('scheduling-surgeries')">Scheduling Surgeries</a></li>
+        <li><a href="#" onclick="showPage('scans')">Scans</a></li>
+      </ul>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+      <!-- Logout Button -->
+      <button class="logout-btn" onclick="logout()">Logout</button>
+      
+      <div class="page-content" id="patient-info">
+        <h1>Patient Information</h1>
+        <input type="text" id="patient-search" placeholder="Search Patient by ID" oninput="searchPatient()">
+        <div id="patient-list"></div>
+        <div id="patient-details" style="display: none;">
+          <h3>Patient Details</h3>
+          <p id="patient-name"></p>
+          <p id="patient-age"></p>
+          <p id="patient-diagnosis"></p>
+        </div>
+      </div>
+
+      <div class="page-content" id="settings">
+        <h1>Settings</h1>
+        <p>Settings options will go here...</p>
+      </div>
+
+      <div class="page-content" id="notifications">
+        <h1>Notifications</h1>
+        <div id="notifications-list">
+          <!-- Notifications will go here -->
+        </div>
+      </div>
+
+      <div class="page-content" id="appointments">
+        <h1>Appointments</h1>
+        <ul id="appointments-list">
+          <!-- Appointments will appear here -->
+        </ul>
+      </div>
+
+      <div class="page-content" id="scheduling-surgeries">
+        <h1>Scheduling Surgeries</h1>
+        <form id="surgery-form">
+          <input type="text" id="surgery-patient-id" placeholder="Patient ID" required>
+          <input type="date" id="surgery-date" required>
+          <button type="submit">Schedule Surgery</button>
+        </form>
+        <p id="surgery-status"></p>
+      </div>
+
+      <div class="page-content" id="scans">
+        <h1>Scans</h1>
+        <p>Scan results and scheduling will go here...</p>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
